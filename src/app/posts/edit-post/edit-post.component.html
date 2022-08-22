@@ -1,0 +1,15 @@
+<h3>Update Post</h3>
+<hr />
+<form
+  style="display: flex; flex-direction: column"
+  [formGroup]="updatePostForm"
+  (ngSubmit)="onUpdatePostForm()"
+>
+  <label for="">Title</label>
+  <input type="text" name="" id="" formControlName="title" />
+  <small>{{ showTitleError() }}</small>
+  <label for="">Description</label>
+  <textarea formControlName="description">Description</textarea>
+  <small>{{ showDescriptionError() }}</small>
+  <button [disabled]="updatePostForm.invalid">Submit</button>
+</form>

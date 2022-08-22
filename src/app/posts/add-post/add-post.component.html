@@ -1,0 +1,15 @@
+<h3>Add Post</h3>
+<hr />
+<form
+  style="display: flex; flex-direction: column"
+  [formGroup]="postForm"
+  (ngSubmit)="addPostForm()"
+>
+  <label for="">Title</label>
+  <input type="text" name="" id="" formControlName="title" />
+  <small>{{ showTitleError() }}</small>
+  <label for="">Description</label>
+  <textarea formControlName="description">Description</textarea>
+  <small>{{ showDescriptionError() }}</small>
+  <button [disabled]="postForm.invalid">Submit</button>
+</form>
