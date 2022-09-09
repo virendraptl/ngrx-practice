@@ -21,21 +21,14 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
-    CounterOutputComponent,
-    CounterButtonsComponent,
-    CustomCounterInputComponent,
     HomeComponent,
-    PostListComponent,
-    AddPostComponent,
-    EditPostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],
   providers: [],
