@@ -7,5 +7,18 @@
 <div>
   <a routerLink="/posts">posts</a>
 </div>
-<hr>
+<div *ngIf="!(isAuthenticated | async)">
+  <a routerLink="/auth/login">Login</a>
+</div>
+<div *ngIf="!(isAuthenticated | async)">
+  <a routerLink="/auth/signup">Signup</a>
+</div>
+<div *ngIf="isAuthenticated | async">     
+  <a>Logout</a>
+</div>
+<hr />
+<app-loading-spinner *ngIf="showLoading | async"></app-loading-spinner>
+<div class="error" *ngIf="errorMessage | async as error">
+  Error: {{ error }}
+</div>
 <router-outlet></router-outlet>
